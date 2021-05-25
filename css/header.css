@@ -4,6 +4,7 @@
 }
 
 .site-header {
+    z-index: 99;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -89,9 +90,10 @@
 .site-footer {
     width: 100%;
     min-height: 30px;
-    background-color: #83f5ff8a;
+    background-color: #1963b88a;
     backdrop-filter: blur(2px);
-    box-shadow: 0 -10px 15px 0 #83f5ff8a;
+    box-shadow: 0 -10px 15px 0 #1963b88a;
     text-align: center;
     padding-top: 5px;
+    color: white;
 }
