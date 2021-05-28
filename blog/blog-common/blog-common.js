@@ -1,6 +1,6 @@
 
 // 新着記事
-news("news1", "1.html", "テスト投稿");
+news("news1", "2.html", "テスト投稿その2");
 news("news2", "1.html", "テスト投稿");
 news("news3", "1.html", "テスト投稿");
 news("news4", "1.html", "テスト投稿");
@@ -43,3 +43,9 @@ function news(id, ref, text) {
     link.textContent = text;
 }
 
+
+hljs.addPlugin({
+    'after:highlightElement': ({ el, result, text }) => {
+        result.value = result.value.replace(/^/gm, '<span class="row-number"></span>');
+    }
+});
