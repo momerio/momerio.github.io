@@ -7,25 +7,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>テスト投稿 | Momerio</title>
-    <link rel="icon" type="image/x-icon" href="../../favicon.jpg">
-    <link rel="stylesheet" href="../../css/reset.css" />
-    <link rel="stylesheet" href="../../css/style.css" />
-    <link rel="stylesheet" href="../../css/header.css" />
-    <link rel="stylesheet" href="../../css/main.css" />
-    <link rel="stylesheet" href="../blog-style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.jpg">
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="blog-style.css" />
 
     <!-- cards -->
-    <meta name="twitter:image:src" content="favicon.ico" />
+    <meta name=" twitter:image:src" content="../favicon.jpg" />
     <meta name="twitter:site" content="momerio blog" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="momerio blog" />
     <meta name="twitter:description" content="Python, Java, PHP and more... - momerio" />
-    <meta property="og:image" content="favicon.ico" />
+    <meta property="og:image" content="../favicon.jpg" />
     <meta property="og:image:alt" content="Python, Java, PHP and more... - momerio">
     <meta property="og:site_name" content="momerio blog" />
     <meta property="og:type" content="profile" />
     <meta property="og:title" content="momerio blog" />
-    <meta property="og:url" content="hhttps://momerio.github.io/" />
+    <meta property="og:url" content="https://momerio.github.io/" />
     <meta property="og:description" content="Python, Java, PHP and more... - momerio " />
     <meta property=" profile:username" content="momerio" />
 </head>
@@ -40,9 +40,9 @@
                     menu
                 </button>
                 <ul class="nav__wrapper">
-                    <li class="nav__item"><a href="../../index.html">Home</a></li>
+                    <!-- <li class="nav__item"><a href="../index.html">Home</a></li> -->
                     <li class="nav__item selected"><a href="index.html">Blog</a></li>
-                    <li class="nav__item"><a href="#">Link</a></li>
+                    <!-- <li class="nav__item"><a href="#">Link</a></li> -->
                     <li class="nav__item"><a href="https://github.com/momerio">Github</a></li>
                 </ul>
             </nav>
@@ -52,8 +52,6 @@
 
     <!-- main contents -->
     <div class="main-content">
-
-
         <!-- サイドバー デスクトップ向け -->
         <div class="sidebar">
             <!-- bio -->
@@ -62,41 +60,37 @@
                     プロフィール
                 </p>
                 <a href="https://github.com/momerio" target="_blank" rel="noopener noreferrer">
-                    <img src="../../favicon.jpg" alt="momerio">
+                    <img src="../favicon.jpg" alt="momerio"> <!-- 画像 -->
                 </a>
-                <p>
-                    名前: Momerio
-                </p>
-                <p>
-                    <a href="https://github.com/momerio" target="_blank" rel="noopener noreferrer">
-                        Github: momerio
-                    </a>
-                </p>
-                <div class="details">
-                    <p>
-                        PythonとJavaが好物な大学生．
-                    </p>
-                    <p>
-                        自然言語処理と深層学習が専門です．
-                    </p>
-                </div>
+                <div id="profile_name"></div>
+                <a id="profile_github" href="https://github.com/momerio" target="_blank" rel="noopener noreferrer"></a>
+                <div id="profile_details" class="details"></div>
             </div>
+            <!-- bio end -->
 
             <!-- news -->
             <div class="news">
                 <!-- 新着記事 -->
                 <h1>新着記事</h1>
                 <div class="list-box">
-                    <li><a href="1.html">テスト投稿</a></li>
+                    <li><a id="news1" href="#"></a></li>
+                    <li><a id="news2" href="#"></a></li>
+                    <li><a id="news3" href="#"></a></li>
+                    <li><a id="news4" href="#"></a></li>
+                    <li><a id="news5" href="#"></a></li>
                 </div>
 
                 <!-- おすすめ -->
-                <h1>おすすめ</h1>
+                <h1>おすすめ記事</h1>
                 <div class="list-box">
-                    <li><a href="1.html">テスト投稿</a></li>
-                    <li><a href="../index.html">投稿記事一覧</a></li>
+                    <li><a id="recommend1" href="#"></a></li>
+                    <li><a id="recommend2" href="#"></a></li>
+                    <li><a id="recommend3" href="#"></a></li>
+                    <li><a id="recommend4" href="#"></a></li>
+                    <li><a id="recommend5" href="#"></a></li>
                 </div>
             </div>
+            <!-- news end -->
         </div>
 
 
@@ -123,7 +117,7 @@
                     ここにびっくりしたことを書きます．
                 </p>
                 <p>
-                    本編が始まります．
+                    ああああ
                 </p>
 
                 <h1>びっくらこいた</h1>
@@ -132,7 +126,7 @@
                     ここにびっくりしたことを書きます．
                 </p>
                 <p>
-                    本編が始まります．
+                    ああ
                 </p>
 
                 <h1>びっくらこいた</h1>
@@ -141,7 +135,7 @@
                     ここにびっくりしたことを書きます．
                 </p>
                 <p>
-                    本編が始まります．
+                    あ……
                 </p>
             </div>
         </div>
@@ -153,57 +147,54 @@
             <div class="bio">
                 <div class="image-box">
                     <a href="https://github.com/momerio" target="_blank" rel="noopener noreferrer">
-                        <img src="../../favicon.jpg" alt="momerio">
+                        <img src="../favicon.jpg" alt="momerio">
                     </a>
                 </div>
                 <div class="bio-box">
                     <p>
                         プロフィール
                     </p>
-                    <p>
-                        名前: Momerio
-                    </p>
-                    <p>
-                        <a href="https://github.com/momerio" target="_blank" rel="noopener noreferrer">
-                            Github: momerio
-                        </a>
-                    </p>
-                    <div class="details">
-                        <p>
-                            PythonとJavaが好物な大学生．
-                        </p>
-                        <p>
-                            自然言語処理と深層学習が専門です．
-                        </p>
-                    </div>
+                    <div id="profile_name_bottom"></div>
+                    <a id="profile_github_bottom" href="https://github.com/momerio" target="_blank"
+                        rel="noopener noreferrer"></a>
+                    <div id="profile_details_bottom" class="details"></div>
                 </div>
             </div>
+            <!-- bio end -->
 
             <!-- news -->
             <div class="news">
                 <!-- 新着記事 -->
                 <h1>新着記事</h1>
                 <div class="list-box">
-                    <li><a href="1.html">テスト投稿</a></li>
+                    <li><a id="news1_bottom" href="#"></a></li>
+                    <li><a id="news2_bottom" href="#"></a></li>
+                    <li><a id="news3_bottom" href="#"></a></li>
+                    <li><a id="news4_bottom" href="#"></a></li>
+                    <li><a id="news5_bottom" href="#"></a></li>
                 </div>
 
                 <!-- おすすめ -->
-                <h1>おすすめ</h1>
+                <h1>おすすめ記事</h1>
                 <div class="list-box">
-                    <li><a href="1.html">テスト投稿</a></li>
-                    <li><a href="../index.html">投稿記事一覧</a></li>
+                    <li><a id="recommend1_bottom" href="#"></a></li>
+                    <li><a id="recommend2_bottom" href="#"></a></li>
+                    <li><a id="recommend3_bottom" href="#"></a></li>
+                    <li><a id="recommend4_bottom" href="#"></a></li>
+                    <li><a id="recommend5_bottom" href="#"></a></li>
                 </div>
             </div>
         </div>
+        <!-- 情報カード end -->
     </div>
     <!-- main contens end -->
 
     <!-- footer -->
-    <div class="site-footer">
-        © 2021 Momerio.
-    </div>
+    <div class="site-footer"></div>
     <!-- footer end -->
 
+    <!-- js -->
+    <script src="blog-common/blog-common.js"></script>
 </body>
 
 </html>

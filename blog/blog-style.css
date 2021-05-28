@@ -216,6 +216,7 @@
     }
     .bottom-card .bio .image-box img {
         width: 100%;
+        max-width: 150px;
         height: auto;
         padding: 0.5rem 0.25rem;
         text-align: center;
@@ -229,6 +230,11 @@
     /* 新着情報 */
     .bottom-card .news {
         margin: 2rem 0;
+    }
+    .bottom-card h1 {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+        font-weight: bolder;
     }
     .bottom-card .news .list-box {
         margin: 0.5rem 0;
