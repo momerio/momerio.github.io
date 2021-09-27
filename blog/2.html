@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>テスト投稿その2 | Momerio</title>
+    <title>WordCloudやってみた | Momerio's blog</title>
     <link rel="icon" type="image/x-icon" href="../favicon.jpg">
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/style.css" />
@@ -102,21 +102,127 @@
         <!-- ブログ記事 -->
         <div class="blog">
             <!-- タイトル -->
-            <div class="title">テスト投稿その2</div>
+            <div class="title">WordCloudやってみた</div>
 
             <!-- 投稿日 -->
             <div class="date">
-                <li class="clock-image">2021/05/28</li>
+                <li class="clock-image">2021/09/27</li>
             </div>
 
             <!-- トップ画像 -->
-            <!-- <div class="top-image">
-                <img src="image/1/1-top.jpg" alt="テスト投稿 | moment">
-            </div> -->
+            <div class="top-image">
+                <img src="image\2\2-top.jpg" alt="テスト投稿 | moment">
+            </div>
 
             <!-- 本文 -->
             <div class="article">
-                <h1>びっくらこいた</h1>
+                <h1>WordCloudが簡単にできるらしい</h1>
+                <p>WordCloudがPythonで簡単にできるらしいのでやってみた．</p>
+                <p>WordCloudとは最近流行り?の可視化方法で，単語の頻度の高いものが大きく表示される例のやつである．</p>
+
+                <p>今回は日本語でwordcloudしてみる．</p>
+
+                <p>早速，使ってみよう．</p>
+                <p>モジュールのインスコ方法は簡単．pipでインスコできる．</p>
+                <pre><code>pip install wordcloud</code></pre>
+
+                <p>ついでにMeCab(形態素解析器)操作モジュールもインスコ．同じくpipでインスコできる．(MeCab本体をインスコしていない人は使えない．本体をインスコしよう．)</p>
+                <pre><code>pip install mecab</code></pre>
+
+                <p>まずは，MeCabで分かち書き(単語のスペース区切り)をしてみる</p>
+                <pre><code>import MeCab
+
+TEXT = "すもももももももものうち"
+tagger = MeCab.Tagger("-Owakati")  # MeCab
+wakati = tagger.parse(TEXT)  # 分かち書き
+print(wakati)</code></pre>
+
+                <p>次に，wordcloudインスタンスの設定をする．</p>
+
+                <pre><code>wc = wordcloud.WordCloud(font_path=FONT_FILE, 
+                    background_color="white", 
+                    width=WIDTH, 
+                    height=HEIGHT, 
+                    collocations=False, 
+                    stopwords=STOP_WORDS,
+                    max_words=MAX_WORDS,
+                    regexp=r"[\w']+")  # WordCloud初期化
+wc.generate(parse)  # WordCloud作成
+wc.to_file("output.png")  # 画像ファイル出力</code></pre>
+
+                <p>パラメータは色々設定できる．</p>
+
+                <p>widthやheightは出力画像のサイズ(px)，stopwordsをlist型やset型で指定できる．詳細は<a
+                        href="https://amueller.github.io/word_cloud/generated/wordcloud.WordCloud.html" target="_blank"
+                        rel="noopener noreferrer">リファレンス</a>を参照してほしい．</p>
+
+                <p>こんな感じで日本語のフォントを設定する必要がある．</p>
+
+                <pre><code>FONT_FILE = "C:\Windows\Fonts\MSGOTHIC.TTC"  # フォントファイル指定</code></pre>
+
+                <p>特にフォントのパスを弄ってなかったら，これでMSゴシック体になるはずだ．</p>
+
+                <p>wordcloudを実行して，画像を出力してみよう．</p>
+
+                <pre><code>wc.generate(wakati)  # WordCloud作成
+wc.to_file("output.png")  # 画像ファイル出力</code></pre>
+
+                <p>generateメソッドに分かち書きした文章を入れる．to_fileメソッドに出力画像のファイルパスを入れるとOKだ．</p>
+
+                <h1>実行例</h1>
+                <p>夏目漱石の『吾輩は猫である』の冒頭部分をwordcloudで可視化してみる．(サンプルプログラムではneko.txtから読み込むようにしている)</p>
+
+                Python
+                <pre><code>import wordcloud
+import MeCab
+
+
+with open("neko.txt", "r", encoding="utf-8") as f:
+    CONTENTS = f.read().splitlines()
+    TEXT = "".join([content for content in CONTENTS if not content == ""])
+STOP_WORDS = []  # ストップワードを設定(今回は設定しない)
+
+MAX_WORDS = 2000  # 出力個数の上限
+WIDTH = 1000  # 出力画像の幅
+HEIGHT = 1000  # 出力画像の高さ
+FONT_FILE = "C:\Windows\Fonts\MSGOTHIC.TTC"  # フォントファイル指定
+
+tagger = MeCab.Tagger("-Owakati")  # MeCab
+wakati = tagger.parse(TEXT)  # 分かち書き
+
+wc = wordcloud.WordCloud(font_path=FONT_FILE,
+            background_color="white",
+            width=WIDTH,
+            height=HEIGHT,
+            collocations=False,
+            stopwords=STOP_WORDS,
+            max_words=MAX_WORDS,
+            regexp=r"[\w']+")  # WordCloud初期化
+wc.generate(wakati)  # WordCloud作成
+wc.to_file("output.png")  # 画像ファイル出力</code></pre>
+
+                <p>出力結果はこんな感じ．</p>
+
+                <p style="text-align: center;">
+                    <img src="image/2/2-output.jpg" alt="wordcloud出力結果" width="80%">
+                </p>
+
+                <p>『て』や『が』等の助詞が多く出力されてしまっていることがわかる．</p>
+                <p>いちいちストップワードに指定するのは面倒なので，形態素解析時点で不要な品詞を外す必要がある．まだまだ改良の余地がある．</p>
+
+                <p>気が向いたら，改良するかも．</p>
+
+                <h1>参考</h1>
+                <p>
+                    <li><a href="https://amueller.github.io/word_cloud/generated/wordcloud.WordCloud.html"
+                            target="_blank" rel="noopener noreferrer">wordcloudモジュールのリファレンス,
+                            https://amueller.github.io/word_cloud/generated/wordcloud.WordCloud.html</a></li>
+                </p>
+                <p>
+                    <li><a href="https://mmtomitomimm.blogspot.com/2018/12/word-cloud.html" target="_blank"
+                            rel="noopener noreferrer">PythonでWordCloudを作成してみました,
+                            https://mmtomitomimm.blogspot.com/2018/12/word-cloud.html</a></li>
+                </p>
             </div>
         </div>
 
