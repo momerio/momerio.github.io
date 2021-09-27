@@ -1,17 +1,18 @@
 
 // 新着記事
-news("news1", "2.html", "テスト投稿その2");
+news("news1", "2.html", "WordCloudやってみた");
 news("news2", "1.html", "テスト投稿");
-news("news3", "1.html", "テスト投稿");
-news("news4", "1.html", "テスト投稿");
-news("news5", "1.html", "テスト投稿");
+// news("news3", "1.html", "テスト投稿");
+// news("news4", "1.html", "テスト投稿");
+// news("news5", "1.html", "テスト投稿");
 
 // おすすめ記事
-news("recommend1", "1.html", "テスト投稿");
-news("recommend2", "1.html", "テスト投稿");
-news("recommend3", "1.html", "テスト投稿");
-news("recommend4", "1.html", "テスト投稿");
-news("recommend5", "index.html", "投稿記事一覧");
+news("recommend1", "1.html", "WordCloudやってみた");
+news("recommend2", "index.html", "投稿記事一覧");
+// news("recommend2", "", "");
+// news("recommend3", "", "");
+// news("recommend4", "", "");
+// news("recommend5", "index.html", "投稿記事一覧");
 
 ////////////////////////////////////////////////////////////////////////
 
