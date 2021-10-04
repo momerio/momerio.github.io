@@ -29,7 +29,7 @@ function profile(name, github, details) {
 }
 const profile_name = "名前: Momerio";
 const profile_github = "Github: momerio";
-const profile_details = "<p>Pythonが好物な大学生．</p><p>自然言語処理と深層学習をやってます．</p>";
+const profile_details = "<p>Pythonが好物．</p><p>最近は自然言語処理と深層学習で遊んでいます．</p>";
 profile(profile_name, profile_github, profile_details)
 
 // 記事情報
