@@ -117,19 +117,19 @@
             <!-- 本文 -->
             <div class="article">
                 <h1>WordCloudが簡単にできるらしい</h1>
-                <p>WordCloudがPythonで簡単にできるらしいのでやってみた．</p>
-                <p>WordCloudとは最近流行り?の可視化方法で，単語の頻度の高いものが大きく表示される例のやつである．</p>
+                <p>WordCloudがPythonで簡単にできるらしいのでやってみました．</p>
+                <p>WordCloudとは最近流行り?の可視化方法で，単語の頻度の高いものが大きく表示される例のやつです．</p>
 
-                <p>今回は日本語でwordcloudしてみる．</p>
+                <p>今回は日本語でwordcloudしてみましょう．</p>
 
-                <p>早速，使ってみよう．</p>
-                <p>モジュールのインスコ方法は簡単．pipでインスコできる．</p>
+                <p>早速，使ってみます．</p>
+                <p>モジュールのインスコ方法は簡単．pipでインスコできます．</p>
                 <pre><code>pip install wordcloud</code></pre>
 
-                <p>ついでにMeCab(形態素解析器)操作モジュールもインスコ．同じくpipでインスコできる．(MeCab本体をインスコしていない人は使えない．本体をインスコしよう．)</p>
+                <p>ついでにMeCab(形態素解析器)操作モジュールもインスコ．同じくpipでインスコできます．(MeCab本体をインスコしていない人は使えないので，本体をインスコしましょう．)</p>
                 <pre><code>pip install mecab</code></pre>
 
-                <p>まずは，MeCabで分かち書き(単語のスペース区切り)をしてみる</p>
+                <p>まずは，MeCabで分かち書き(単語のスペース区切り)をしてみましょう</p>
                 <pre><code>import MeCab
 
 TEXT = "すもももももももものうち"
@@ -137,7 +137,7 @@ tagger = MeCab.Tagger("-Owakati")  # MeCab
 wakati = tagger.parse(TEXT)  # 分かち書き
 print(wakati)</code></pre>
 
-                <p>次に，wordcloudインスタンスの設定をする．</p>
+                <p>次に，wordcloudインスタンスの設定をします．</p>
 
                 <pre><code>wc = wordcloud.WordCloud(font_path=FONT_FILE, 
                     background_color="white", 
@@ -150,27 +150,27 @@ print(wakati)</code></pre>
 wc.generate(parse)  # WordCloud作成
 wc.to_file("output.png")  # 画像ファイル出力</code></pre>
 
-                <p>パラメータは色々設定できる．</p>
+                <p>パラメータは色々設定できます．</p>
 
-                <p>widthやheightは出力画像のサイズ(px)，stopwordsをlist型やset型で指定できる．詳細は<a
+                <p>widthやheightは出力画像のサイズ(px)，stopwordsをlist型やset型で指定できます．詳細は<a
                         href="https://amueller.github.io/word_cloud/generated/wordcloud.WordCloud.html" target="_blank"
-                        rel="noopener noreferrer">リファレンス</a>を参照してほしい．</p>
+                        rel="noopener noreferrer">リファレンス</a>を参照してください．</p>
 
-                <p>こんな感じで日本語のフォントを設定する必要がある．</p>
+                <p>こんな感じで日本語のフォントを設定する必要があります．</p>
 
                 <pre><code>FONT_FILE = "C:\Windows\Fonts\MSGOTHIC.TTC"  # フォントファイル指定</code></pre>
 
-                <p>特にフォントのパスを弄ってなかったら，これでMSゴシック体になるはずだ．</p>
+                <p>特にフォントのパスを弄ってなかったら，これでMSゴシック体になるはずです．</p>
 
-                <p>wordcloudを実行して，画像を出力してみよう．</p>
+                <p>wordcloudを実行して，画像を出力してみましょう．</p>
 
                 <pre><code>wc.generate(wakati)  # WordCloud作成
 wc.to_file("output.png")  # 画像ファイル出力</code></pre>
 
-                <p>generateメソッドに分かち書きした文章を入れる．to_fileメソッドに出力画像のファイルパスを入れるとOKだ．</p>
+                <p>generateメソッドに分かち書きした文章を入れる．to_fileメソッドに出力画像のファイルパスを入れるとOKです．</p>
 
                 <h1>実行例</h1>
-                <p>夏目漱石の『吾輩は猫である』の冒頭部分をwordcloudで可視化してみる．(サンプルプログラムではneko.txtから読み込むようにしている)</p>
+                <p>夏目漱石の『吾輩は猫である』の冒頭部分をwordcloudで可視化してみましょう．(サンプルプログラムではneko.txtから読み込むようにしています)</p>
 
                 Python
                 <pre><code>import wordcloud
@@ -201,18 +201,19 @@ wc = wordcloud.WordCloud(font_path=FONT_FILE,
 wc.generate(wakati)  # WordCloud作成
 wc.to_file("output.png")  # 画像ファイル出力</code></pre>
 
-                <p>出力結果はこんな感じ．</p>
+                <p>出力結果はこんな感じです．</p>
 
                 <p style="text-align: center;">
                     <img src="image/2/2-output.jpg" alt="wordcloud出力結果" width="80%">
                 </p>
 
-                <p>『て』や『が』等の助詞が多く出力されてしまっていることがわかる．</p>
-                <p>いちいちストップワードに指定するのは面倒なので，形態素解析時点で不要な品詞を外す必要がある．まだまだ改良の余地がある．</p>
+                <p>『て』や『が』等の助詞が多く出力されてしまっていることがわかります．</p>
+                <p>いちいちストップワードに指定するのは面倒なので，形態素解析時点で不要な品詞を外す必要があります．まだまだ改良の余地がありますね．</p>
 
-                <p>気が向いたら，改良するかも．</p>
+                <p>気が向いたら，改良するかも！</p>
 
                 <h1>参考</h1>
+                <p>めちゃくちゃ参考にさせていただきました！！</p>
                 <p>
                     <li><a href="https://amueller.github.io/word_cloud/generated/wordcloud.WordCloud.html"
                             target="_blank" rel="noopener noreferrer">wordcloudモジュールのリファレンス,
