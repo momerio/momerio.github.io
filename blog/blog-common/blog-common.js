@@ -1,14 +1,15 @@
 
 // 新着記事
-news("news1", "2.html", "WordCloudやってみた");
-news("news2", "1.html", "テスト投稿");
+news("news1", "3.html", "競技プログラミングのためのPythonの標準入力まとめ");
+news("news2", "2.html", "WordCloudやってみた");
 // news("news3", "1.html", "テスト投稿");
 // news("news4", "1.html", "テスト投稿");
 // news("news5", "1.html", "テスト投稿");
 
 // おすすめ記事
-news("recommend1", "1.html", "WordCloudやってみた");
-news("recommend2", "index.html", "投稿記事一覧");
+news("recommend1", "3.html", "競技プログラミングのためのPythonの標準入力まとめ");
+news("recommend2", "1.html", "WordCloudやってみた");
+news("recommend3", "index.html", "投稿記事一覧");
 // news("recommend2", "", "");
 // news("recommend3", "", "");
 // news("recommend4", "", "");
@@ -27,6 +28,8 @@ function profile(name, github, details) {
     document.getElementById("profile_github_bottom").textContent = github;
     document.getElementById("profile_details_bottom").innerHTML = details;
 }
+
+//プロファイル
 const profile_name = "名前: Momerio";
 const profile_github = "Github: momerio";
 const profile_details = "<p>Pythonが好物．</p><p>最近は自然言語処理と深層学習で遊んでいます．</p>";
