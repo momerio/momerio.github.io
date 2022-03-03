@@ -12,6 +12,7 @@
     background-color: #83f5ff8a;
     backdrop-filter: blur(4px);
     box-shadow: 0 10px 15px 0 #83f5ff8a;
+    color: black;
 }
 
 .site-header__wrapper {
@@ -65,7 +66,8 @@
 
 .nav__item a {
     display: block;
-    width: 100px;
+    /* width: 100px; */
+    width: 120px;
     text-align: center;
     padding: 1.5rem 1rem;
 }
@@ -90,9 +92,9 @@
 }
 
 .nav__wrapper .nav__item.selected {
-    background-color: #4d8bff;
+    background-color: #092eff8a;
     backdrop-filter: blur(2px);
-    box-shadow: 0 10px 15px 0 #4d8bff;
+    box-shadow: 0 10px 15px 0 #092eff8f;
 }
 
 .nav__wrapper .nav__item.selected a {

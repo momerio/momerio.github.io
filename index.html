@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/top-style.css" />
+    <!-- <link rel="stylesheet" href="css/top-style-dark-mode.css" /> -->
+    <link rel="stylesheet" href="#" type="text/css" id="dark-mode-change">
 
 
     <!-- cards -->
@@ -37,6 +39,8 @@
         //     location.href = "blog/index.html";
         // }
     </script>
+
+
 </head>
 
 <body>
@@ -52,7 +56,9 @@
                     <li class="nav__item selected"><a href="index.html">Home</a></li>
                     <li class="nav__item"><a href="blog/index.html">Blog</a></li>
                     <!-- <li class="nav__item"><a href="#">Link</a></li> -->
-                    <li class="nav__item"><a href="https://github.com/momerio">Github</a></li>
+                    <li class="nav__item"><a href="https://github.com/momerio">GitHub</a></li>
+                    <li class="nav__item"><a href="javascript:changeDarkMode();" id="dark-mode-text">Dark Mode</a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -62,34 +68,38 @@
     <!-- main contents -->
     <div class="main-content">
         <p>under construction</p>
-        <p>まだまだ工事中のページ．雑でごめんね><</p>
+        <p>まだまだ工事中のページ．雑でごめんね>< </p>
+                <!-- <form action="" class="darkmode_button">
+                    <input type="button" value="DARK MODE" onclick="changeStyle('css/top-style-dark-mode.css');">
+                    <input type="button" value="LIGHT MODE" onclick="changeStyle('');">
+                </form> -->
 
-        <h1>About me?</h1>
-        <p>Momerio/もめりお</p>
-        <p>水中にいるひよこ</p>
-        <p><a href="https://momdev.club/">同人サークルMoM</a>の代表．</p>
-        <p>webや深層学習やVRなど幅広くやっています．</p>
+                <h1>About me?</h1>
+                <p>Momerio/もめりお</p>
+                <p>水中にいるひよこ</p>
+                <p><a href="https://momdev.club/">同人サークルMoM</a>の代表．</p>
+                <p>webや深層学習やVRなど幅広くやっています．</p>
 
-        <h1>なかにしさん</h1>
-        <p>なかにしさんには主にVR関係でお手伝いいただいています．ありがとうございます．</p>
-        <img src="hp-images/nakanishi-portrait.png" width="40%" style="display: block; margin: 0 auto;">
-        <img src="hp-images/nakanishi-classroom.png" width="60%" style="display: block; margin: 0 auto;">
-        <img src="hp-images/nakanishi-happiness.png" width="60%" style="display: block; margin: 0 auto;">
-        <img src="hp-images/nakanishi-LT.jpg" width="90%" style="display: block; margin: 0 auto;">
+                <h1>なかにしさん</h1>
+                <p>なかにしさんには主にVR関係でお手伝いいただいています．ありがとうございます．</p>
+                <img src="hp-images/nakanishi-portrait.png" width="40%" style="display: block; margin: 0 auto;">
+                <img src="hp-images/nakanishi-classroom.png" width="60%" style="display: block; margin: 0 auto;">
+                <img src="hp-images/nakanishi-happiness.png" width="60%" style="display: block; margin: 0 auto;">
+                <img src="hp-images/nakanishi-LT.jpg" width="90%" style="display: block; margin: 0 auto;">
 
-        <h3>ロケーション</h3>
-        <li><a
-                href="https://cluster.mu/w/8e58f335-6f3b-4920-9fbf-2352941c814f">saclus(https://cluster.mu/w/8e58f335-6f3b-4920-9fbf-2352941c814f)</a>
-        </li>
-        <li><a
-                href="https://cluster.mu/w/547cf40d-501c-4f5d-8978-25965fcb64f2">いつかの放課後(https://cluster.mu/w/547cf40d-501c-4f5d-8978-25965fcb64f2)</a>
-        </li>
-        <li><a
-                href="https://cluster.mu/w/776ab566-4179-4454-94c8-253caf2283ce">空遮る浮島(https://cluster.mu/w/776ab566-4179-4454-94c8-253caf2283ce)</a>
-        </li>
-        <li><a
-                href="https://cluster.mu/w/9e7222dd-1ab6-4e7f-94c4-773cdcc51728">LT発表用簡易ワールド(https://cluster.mu/w/9e7222dd-1ab6-4e7f-94c4-773cdcc51728)</a>
-        </li>
+                <h3>ロケーション</h3>
+                <li><a
+                        href="https://cluster.mu/w/8e58f335-6f3b-4920-9fbf-2352941c814f">saclus(https://cluster.mu/w/8e58f335-6f3b-4920-9fbf-2352941c814f)</a>
+                </li>
+                <li><a
+                        href="https://cluster.mu/w/547cf40d-501c-4f5d-8978-25965fcb64f2">いつかの放課後(https://cluster.mu/w/547cf40d-501c-4f5d-8978-25965fcb64f2)</a>
+                </li>
+                <li><a
+                        href="https://cluster.mu/w/776ab566-4179-4454-94c8-253caf2283ce">空遮る浮島(https://cluster.mu/w/776ab566-4179-4454-94c8-253caf2283ce)</a>
+                </li>
+                <li><a
+                        href="https://cluster.mu/w/9e7222dd-1ab6-4e7f-94c4-773cdcc51728">LT発表用簡易ワールド(https://cluster.mu/w/9e7222dd-1ab6-4e7f-94c4-773cdcc51728)</a>
+                </li>
 
     </div>
     <!-- main contens end -->
@@ -98,6 +108,26 @@
     <div class="site-footer">
     </div>
     <!-- footer end -->
+
+    <script type="text/javascript">
+        var isDarkMode = false;
+
+        function changeDarkMode() {
+            var linkStyle = document.getElementById("dark-mode-change");
+            var darkText = document.getElementById("dark-mode-text");
+            if (isDarkMode) {
+                // change to light mode
+                linkStyle.href = "";
+                darkText.innerHTML = "Dark Mode";
+                isDarkMode = false;
+            }
+            else {
+                linkStyle.href = "css/top-style-dark-mode.css";
+                darkText.innerHTML = "Light Mode";
+                isDarkMode = true;
+            }
+        };
+    </script>
 
 </body>
 
