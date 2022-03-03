@@ -49,6 +49,7 @@
         transform: translateY(-100%);
         transition: transform 0.3s ease-out, opacity 0.3s ease-out;
     }
+
     .nav__wrapper.active {
         visibility: visible;
         opacity: 1;
@@ -112,5 +113,5 @@
 }
 
 .site-footer::after {
-    content: "© 2021 Momerio.";
+    content: "© 2021-2022 Momerio.";
 }
