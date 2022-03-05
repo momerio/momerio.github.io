@@ -22,15 +22,19 @@ headerHTMLの引数は現在ページを示す．
 
  */}
 
+var darkModeHref = "" // ダークモードCSSのURL
+
 function headerHTML(thisPage) {
     switch (thisPage) {
         case "top page":
             var gotoHomeHref = "/index.html";
             var gotoBlogHref = "blog/index.html";
+            darkModeHref = "/css/top-style-dark-mode.css";
             break;
         case "blog":
             var gotoHomeHref = "/index.html";
             var gotoBlogHref = "index.html";
+            darkModeHref = "#";
             break;
         default:
             console.log("headerHTML: thisPage is not defined");
@@ -68,7 +72,7 @@ function headerHTML(thisPage) {
 
 var isDarkMode = false;
 
-function changeDarkMode(href) {
+function changeDarkMode() {
     var linkStyle = document.getElementById("dark-mode-change");
     var darkText = document.getElementById("dark-mode-text");
     if (isDarkMode) {
@@ -78,7 +82,7 @@ function changeDarkMode(href) {
         isDarkMode = false;
     }
     else {
-        linkStyle.href = href;
+        linkStyle.href = darkModeHref;
         darkText.innerHTML = "Light Mode"; //表示名
         isDarkMode = true;
     }
