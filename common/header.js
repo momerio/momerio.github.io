@@ -25,21 +25,25 @@ headerHTMLの引数は現在ページを示す．
 var darkModeHref = "" // ダークモードCSSのURL
 
 function headerHTML(thisPage) {
+    var gotoHomeHref = "/index.html";
+    var gotoBlogHref = "/blog/index.html";
     switch (thisPage) {
         case "top page":
-            var gotoHomeHref = "/index.html";
-            var gotoBlogHref = "blog/index.html";
             darkModeHref = "/css/top-style-dark-mode.css";
+            var homeSelected = "selected";
+            var blogSelected = "";
+            var darkModeSource_test = `<li class="nav__item"><a href="javascript:changeDarkMode();" id="dark-mode-text">Dark Mode</a>`;
             break;
         case "blog":
-            var gotoHomeHref = "/index.html";
-            var gotoBlogHref = "index.html";
             darkModeHref = "#";
+            var homeSelected = "";
+            var blogSelected = "selected";
+            var darkModeSource_test = "";
             break;
         default:
             console.log("headerHTML: thisPage is not defined");
-            var gotoHomeHref = "/index.html";
-            var gotoBlogHref = "/index.html";
+            var homeSelected = "selected";
+            var blogSelected = "";
             break;
     }
 
@@ -51,10 +55,10 @@ function headerHTML(thisPage) {
             menu
         </button>
         <ul class="nav__wrapper">
-            <li class="nav__item selected"><a href="${gotoHomeHref}">Home</a></li>
-            <li class="nav__item"><a href="${gotoBlogHref}">Blog</a></li>
+            <li class="nav__item ${homeSelected}"><a href="${gotoHomeHref}">Home</a></li>
+            <li class="nav__item ${blogSelected}"><a href="${gotoBlogHref}">Blog</a></li>
             <li class="nav__item"><a href="https://github.com/momerio">GitHub</a></li>
-            <li class="nav__item"><a href="javascript:changeDarkMode();" id="dark-mode-text">Dark Mode</a>
+            ${darkModeSource_test}
             </li>
         </ul>
     </nav>
