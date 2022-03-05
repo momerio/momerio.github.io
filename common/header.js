@@ -1,17 +1,33 @@
 
 
 ///// header setting /////
-var headerScript = `
+function headerHTML(thisPage) {
+    switch (thisPage) {
+        case "top page":
+            var gotoHomeHref = "index.html";
+            var gotoBlogHref = "blog/index.html";
+            break;
+        case "blog":
+            var gotoHomeHref = "../index.html";
+            var gotoBlogHref = "index.html";
+            break;
+        default:
+            console.log("headerHTML: thisPage is not defined");
+            var gotoHomeHref = "/index.html";
+            var gotoBlogHref = "/index.html";
+            break;
+    }
+
+    var headerScript = `
 <div class="wrapper site-header__wrapper">
-    <a href="#" class="brand">Momerio</a>
+    <a href="/index.html" class="brand">Momerio</a>
     <nav class="nav">
         <button class="nav__toggle" aria-expanded="false" type="button">
             menu
         </button>
         <ul class="nav__wrapper">
-            <li class="nav__item selected"><a href="index.html">Home</a></li>
-            <li class="nav__item"><a href="blog/index.html">Blog</a></li>
-            <!-- <li class="nav__item"><a href="#">Link</a></li> -->
+            <li class="nav__item selected"><a href="${gotoHomeHref}">Home</a></li>
+            <li class="nav__item"><a href="${gotoBlogHref}">Blog</a></li>
             <li class="nav__item"><a href="https://github.com/momerio">GitHub</a></li>
             <li class="nav__item"><a href="javascript:changeDarkMode();" id="dark-mode-text">Dark Mode</a>
             </li>
@@ -21,9 +37,11 @@ var headerScript = `
 `;
 
 
-var headerHTML = document.getElementById("header");
-headerHTML.innerHTML = headerScript;
+    var headerHTML = document.getElementById("header");
+    headerHTML.innerHTML = headerScript;
 
+    console.log("header.js loaded");
+}
 /////////
 
 
@@ -32,7 +50,7 @@ headerHTML.innerHTML = headerScript;
 
 var isDarkMode = false;
 
-function changeDarkMode() {
+function changeDarkMode(href) {
     var linkStyle = document.getElementById("dark-mode-change");
     var darkText = document.getElementById("dark-mode-text");
     if (isDarkMode) {
@@ -42,7 +60,7 @@ function changeDarkMode() {
         isDarkMode = false;
     }
     else {
-        linkStyle.href = "css/top-style-dark-mode.css";
+        linkStyle.href = href;
         darkText.innerHTML = "Light Mode";
         isDarkMode = true;
     }
