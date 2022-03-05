@@ -1,0 +1,62 @@
+/* blog-style.cssの改変 */
+
+
+.main-content a {
+    color: #83f5ff;
+    /* font-weight: bolder; */
+    text-shadow: 2px 4px 3px #aaffff;
+}
+
+.main-content a:hover {
+    color: #1cd2ff;
+    text-shadow: none;
+}
+
+.main-content h1 {
+    text-align: center;
+    width: 80%;
+    margin: 2rem auto;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 2rem;
+    border-bottom: 5px dashed #0059ff;
+    padding-bottom: 1rem;
+    color: whitesmoke;
+}
+
+.main-content h2 {
+    font-size: 1.5rem;
+    margin: 1rem;
+    font-weight: bolder;
+    padding: 1rem 1rem;
+    color: whitesmoke;
+    background: #00000020;
+    border-left: solid 5px #4d8bff80;
+    box-shadow: 0 0 25px 0 #3954809b;
+    margin: 2rem 0;
+}
+
+.main-content h3 {
+    font-size: 1.5rem;
+    /* margin: 1rem; */
+    font-weight: bolder;
+    /* padding: 1rem 1rem; */
+    font-weight: bolder;
+    color: whitesmoke;
+    /* background: #00000020; */
+    /* border-left: solid 5px #4d8bff80;
+    box-shadow: 0 0 25px 0 #3954809b; */
+    margin: 2rem 0;
+}
+
+.main-content p {
+    margin: 2rem 0;
+}
+
+.main-content li{
+    margin: 1rem 0;
+}
+
+.main-content img{
+    padding: 1rem 0rem;
+}
