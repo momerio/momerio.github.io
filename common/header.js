@@ -1,14 +1,35 @@
 
 
 ///// header setting /////
+{/* 
+使用方法: 
+
+1. header部分に以下のソースを読み込む
+<header class="site-header" id="header"></header>
+
+2. JS参照部分に以下のスクリプトを読み込む
+
+headerHTMLの引数は現在ページを示す．
+    トップページ: top page
+    ブログページ: blog
+
+```
+<script type="text/javascript" src="/common/header.js"></script>
+<script>
+    headerHTML("blog");
+</script>
+```
+
+ */}
+
 function headerHTML(thisPage) {
     switch (thisPage) {
         case "top page":
-            var gotoHomeHref = "index.html";
+            var gotoHomeHref = "/index.html";
             var gotoBlogHref = "blog/index.html";
             break;
         case "blog":
-            var gotoHomeHref = "../index.html";
+            var gotoHomeHref = "/index.html";
             var gotoBlogHref = "index.html";
             break;
         default:
@@ -36,11 +57,8 @@ function headerHTML(thisPage) {
 </div>
 `;
 
-
     var headerHTML = document.getElementById("header");
     headerHTML.innerHTML = headerScript;
-
-    console.log("header.js loaded");
 }
 /////////
 
@@ -56,12 +74,12 @@ function changeDarkMode(href) {
     if (isDarkMode) {
         // change to light mode
         linkStyle.href = "";
-        darkText.innerHTML = "Dark Mode";
+        darkText.innerHTML = "Dark Mode"; //表示名
         isDarkMode = false;
     }
     else {
         linkStyle.href = href;
-        darkText.innerHTML = "Light Mode";
+        darkText.innerHTML = "Light Mode"; //表示名
         isDarkMode = true;
     }
 };
