@@ -54,6 +54,25 @@ body {
     color: white;
 }
 
+@media (max-width: 699.9px) {
+    .nav__wrapper {
+        background-color: #0a0b5f70;
+        box-shadow: 0 10px 15px #0a0b5f70, 0 -10px 15px #0a0b5f70;
+    }
+}
+
+@media (max-width: 699.9px) {
+    .nav__wrapper .nav__item.selected {
+        background-color: #12023dbb;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 10px 15px 0 #12054d, 0 0 3px 1px #12054d;
+        border-top-left-radius: 10% 80%;
+        border-top-right-radius: 50% 50%;
+        border-bottom-right-radius: 10% 50%;
+        border-bottom-left-radius: 20% 10%;
+    }
+}
+
 /* footer */
 
 .site-footer {
