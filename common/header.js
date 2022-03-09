@@ -22,6 +22,25 @@ headerHTMLの引数は現在ページを示す．
 
  */}
 
+// for smart-phone
+var isNavAcrive = false;
+function showNav() {
+    var nav = document.getElementsByClassName("nav__wrapper")[0];
+    var hamburger = document.getElementById("hamburger-menu");
+    if (!isNavAcrive) {
+        nav.classList.add("active");
+        hamburger.classList.add("close-btn");
+        hamburger.classList.remove("menu-btn");
+        console.log("showNav: active");
+        isNavAcrive = true;
+    } else {
+        nav.classList.remove("active");
+        hamburger.classList.add("menu-btn");
+        hamburger.classList.remove("close-btn");
+        isNavAcrive = false;
+    }
+}
+
 var darkModeHref = "" // ダークモードCSSのURL
 
 function headerHTML(thisPage) {
@@ -51,9 +70,11 @@ function headerHTML(thisPage) {
 <div class="wrapper site-header__wrapper">
     <a href="/index.html" class="brand">Momerio</a>
     <nav class="nav">
-        <button class="nav__toggle" aria-expanded="false" type="button">
-            menu
-        </button>
+        <div class="hamburger">
+            <a href="javascript:showNav()">
+                <div id="hamburger-menu" class="menu-btn"><span></span></div>
+            </a>            
+        </div>
         <ul class="nav__wrapper">
             <li class="nav__item ${homeSelected}"><a href="${gotoHomeHref}">Home</a></li>
             <li class="nav__item ${blogSelected}"><a href="${gotoBlogHref}">Blog</a></li>
