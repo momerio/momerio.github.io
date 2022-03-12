@@ -27,3 +27,7 @@ body {
         width: 100%;
     }
 }
+
+.spacer-50px {
+    height: 50px;
+}
