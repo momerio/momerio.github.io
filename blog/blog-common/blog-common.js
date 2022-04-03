@@ -1,21 +1,18 @@
 
 // 新着記事
-news("news1", "4.html", "【備忘録】私的よく忘れるJavaScriptの読み込み方法");
-news("news2", "3.html", "競技プログラミングのためのPythonの標準入力まとめ");
-news("news3", "2.html", "WordCloudやってみた");
-// news("news3", "1.html", "テスト投稿");
+news("news1", "5.html", "【報告】なかにしさんがVTuberになりました");
+news("news2", "4.html", "【備忘録】私的よく忘れるJavaScriptの読み込み方法");
+news("news3", "3.html", "競技プログラミングのためのPythonの標準入力まとめ");
+news("news4", "2.html", "WordCloudやってみた");
 // news("news4", "1.html", "テスト投稿");
 // news("news5", "1.html", "テスト投稿");
 
 // おすすめ記事
-news("recommend1", "4.html", "【備忘録】私的よく忘れるJavaScriptの読み込み方法");
-news("recommend2", "3.html", "競技プログラミングのためのPythonの標準入力まとめ");
-news("recommend3", "1.html", "WordCloudやってみた");
-news("recommend4", "index.html", "投稿記事一覧");
-// news("recommend2", "", "");
-// news("recommend3", "", "");
-// news("recommend4", "", "");
-// news("recommend5", "index.html", "投稿記事一覧");
+news("recommend1", "5.html", "【報告】なかにしさんがVTuberになりました");
+news("recommend2", "4.html", "【備忘録】私的よく忘れるJavaScriptの読み込み方法");
+news("recommend3", "3.html", "競技プログラミングのためのPythonの標準入力まとめ");
+news("recommend4", "1.html", "WordCloudやってみた");
+news("recommend5", "index.html", "投稿記事一覧");
 
 ////////////////////////////////////////////////////////////////////////
 
